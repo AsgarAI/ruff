@@ -1,0 +1,11 @@
+name: bench-ruff-avrea-tuned
+on:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: avrea-ubuntu-latest-4-vcpu
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: Swatinem/rust-cache@v2
+      - run: cargo build --release

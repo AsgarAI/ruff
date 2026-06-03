@@ -1,0 +1,11 @@
+name: bench-ruff-blacksmith-tuned
+on:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: blacksmith-4vcpu-ubuntu-2404
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: Swatinem/rust-cache@v2
+      - run: cargo build --release

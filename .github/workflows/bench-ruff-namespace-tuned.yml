@@ -1,0 +1,15 @@
+name: bench-ruff-namespace-tuned
+on:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: namespace-profile-asgar
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: namespacelabs/nscloud-cache-action@v1
+        with:
+          cache: |
+            ~/.cargo
+            target
+      - run: cargo build --release
