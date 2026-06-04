@@ -9,7 +9,5 @@ jobs:
       - uses: dtolnay/rust-toolchain@stable
       - uses: namespacelabs/nscloud-cache-action@v1
         with:
-          cache: |
-            ~/.cargo
-            target
+          cache: rust
       - run: cargo build --release
